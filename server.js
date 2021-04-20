@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const app = express();
 
 const upload = require("multer")();
@@ -10,6 +11,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Parse multipart/form-data Middleware
 app.use(upload.array());
+
+app.use(cors());
+
 
 const dataFromServer = [];
 
